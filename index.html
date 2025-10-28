@@ -2,18 +2,103 @@
 <html>
   <head>
     <title>Two Numbers Problems</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f5f5f5;
+      }
+      h1 {
+        color: #333;
+        text-align: center;
+        margin-bottom: 30px;
+      }
+      h2 {
+        color: #333;
+        border-bottom: 2px solid #ddd;
+        padding-bottom: 10px;
+      }
+      .operation-section {
+        background-color: white;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      }
+      input[type="number"] {
+        padding: 8px;
+        margin: 5px;
+        width: 200px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+      }
+      button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        margin: 5px;
+      }
+      button:hover {
+        background-color: #45a049;
+      }
+      p {
+        font-size: 16px;
+        margin-top: 10px;
+      }
+      span {
+        font-weight: bold;
+        color: #333;
+      }
+    </style>
   </head>
   <body>
-    <h2>Add Two Numbers</h2>
-    <input type="number" id="num1" placeholder="Enter first number" />
-    <input type="number" id="num2" placeholder="Enter second number" />
-    <button onclick="calculateSum()">Calculate Sum</button>
-    <p>Result: <span id="result"></span></p>
-    <h2>Multiply Two Numbers</h2>
-    <input type="number" id="pnum1" placeholder="Enter first number" />
-    <input type="number" id="pnum2" placeholder="Enter second number" />
-    <button onclick="calculateProduct()">Calculate Product</button>
-    <p>Result: <span id="presult"></span></p>
+    <h1>Number Operations Calculator</h1>
+    
+    <div class="operation-section">
+      <h2>Add Two Numbers</h2>
+      <input type="number" id="num1" placeholder="Enter first number" />
+      <input type="number" id="num2" placeholder="Enter second number" />
+      <button onclick="calculateSum()">Calculate Sum</button>
+      <p>Result: <span id="result"></span></p>
+    </div>
+    
+    <div class="operation-section">
+      <h2>Subtract Two Numbers</h2>
+      <input type="number" id="snum1" placeholder="Enter first number" />
+      <input type="number" id="snum2" placeholder="Enter second number" />
+      <button onclick="calculateDifference()">Calculate Difference</button>
+      <p>Result: <span id="sresult"></span></p>
+    </div>
+    
+    <div class="operation-section">
+      <h2>Multiply Two Numbers</h2>
+      <input type="number" id="pnum1" placeholder="Enter first number" />
+      <input type="number" id="pnum2" placeholder="Enter second number" />
+      <button onclick="calculateProduct()">Calculate Product</button>
+      <p>Result: <span id="presult"></span></p>
+    </div>
+    
+    <div class="operation-section">
+      <h2>Divide Two Numbers</h2>
+      <input type="number" id="dnum1" placeholder="Enter first number" />
+      <input type="number" id="dnum2" placeholder="Enter second number" />
+      <button onclick="calculateQuotient()">Calculate Quotient</button>
+      <p>Result: <span id="dresult"></span></p>
+    </div>
+    
+    <div class="operation-section">
+      <h2>Modulo (Remainder) of Two Numbers</h2>
+      <input type="number" id="mnum1" placeholder="Enter first number" />
+      <input type="number" id="mnum2" placeholder="Enter second number" />
+      <button onclick="calculateModulo()">Calculate Remainder</button>
+      <p>Result: <span id="mresult"></span></p>
+    </div>
+
     <script>
       function calculateSum() {
         // Get the values from the input fields
@@ -26,6 +111,19 @@
         // Display the result
         document.getElementById("result").textContent = sum;
       }
+      
+      function calculateDifference() {
+        // Get the values from the input fields
+        let snum1 = parseFloat(document.getElementById("snum1").value);
+        let snum2 = parseFloat(document.getElementById("snum2").value);
+
+        // Calculate the difference
+        let difference = snum1 - snum2;
+
+        // Display the result
+        document.getElementById("sresult").textContent = difference;
+      }
+      
       function calculateProduct() {
         // Get the values from the input fields
         let pnum1 = parseFloat(document.getElementById("pnum1").value);
@@ -36,6 +134,42 @@
 
         // Display the result
         document.getElementById("presult").textContent = product;
+      }
+      
+      function calculateQuotient() {
+        // Get the values from the input fields
+        let dnum1 = parseFloat(document.getElementById("dnum1").value);
+        let dnum2 = parseFloat(document.getElementById("dnum2").value);
+
+        // Check for division by zero
+        if (dnum2 === 0) {
+          document.getElementById("dresult").textContent = "Cannot divide by zero";
+          return;
+        }
+
+        // Calculate the quotient
+        let quotient = dnum1 / dnum2;
+
+        // Display the result
+        document.getElementById("dresult").textContent = quotient;
+      }
+      
+      function calculateModulo() {
+        // Get the values from the input fields
+        let mnum1 = parseFloat(document.getElementById("mnum1").value);
+        let mnum2 = parseFloat(document.getElementById("mnum2").value);
+
+        // Check for division by zero
+        if (mnum2 === 0) {
+          document.getElementById("mresult").textContent = "Cannot divide by zero";
+          return;
+        }
+
+        // Calculate the modulo (remainder)
+        let remainder = mnum1 % mnum2;
+
+        // Display the result
+        document.getElementById("mresult").textContent = remainder;
       }
     </script>
   </body>
