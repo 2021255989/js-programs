@@ -9,6 +9,7 @@
         margin: 0 auto;
         padding: 20px;
         background-color: #f5f5f5;
+        position: relative;
       }
       h1 {
         color: #333;
@@ -54,9 +55,63 @@
         font-weight: bold;
         color: #333;
       }
+      
+      /* BMI Button in top right */
+      .bmi-button {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        color: white !important;
+        text-decoration: none;
+        font-family: verdana;
+        font-size: 105%;
+        padding: 8px 20px;
+        border: 1px solid #4CAF50;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+        background-color: #4CAF50;
+      }
+
+      .bmi-button:hover {
+        background-color: white;
+        color: #4CAF50 !important;
+        text-decoration: none;
+      }
+
+      /* About Me Button in top left - exactly like BMI button */
+      .aboutme-button {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        color: white !important;
+        text-decoration: none;
+        font-family: verdana;
+        font-size: 105%;
+        padding: 8px 20px;
+        border: 1px solid #4CAF50;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+        background-color: #4CAF50;
+      }
+
+      .aboutme-button:hover {
+        background-color: white;
+        color: #4CAF50 !important;
+        text-decoration: none;
+      }
     </style>
   </head>
   <body>
+    <!-- About Me Button -->
+    <a href="https://2021255989.github.io/html/aboutme.html" class="aboutme-button">
+      About Me
+    </a>
+    
+    <!-- BMI Button -->
+    <a href="https://github.com/2021255989/BMI" class="bmi-button">
+      BMI →
+    </a>
+    
     <h1>Number Operations Calculator</h1>
     
     <div class="operation-section">
